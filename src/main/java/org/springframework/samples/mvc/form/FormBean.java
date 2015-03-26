@@ -16,7 +16,7 @@ import org.springframework.samples.mvc.convert.MaskFormat;
 
 public class FormBean {
 	
-	@NotEmpty
+	@NotEmpty(message = "{msg.username.notempty}")
 	private String name;
 	
 	@Min(21)
