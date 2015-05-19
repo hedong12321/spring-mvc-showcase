@@ -25,14 +25,14 @@
 </head>
 <body>
      <div id="formsContent">
-        <form:form id="form" action="doLogin" method="post" modelAttribute="user" cssClass="cleanform">
+        <form:form id="form" action="doLogin" method="post" modelAttribute="userModel" cssClass="cleanform">
             <div class="header">
                 <%-- <c:if test="${not empty message}">
                     <div id="message" class="error">${message}</div>
                 </c:if> --%>
                 <s:bind path="*">
-                    <c:if test="${status.error}">
-                        <div id="message" class="error">Form has errors</div>
+                    <c:if test="${not empty errorInfo}">
+                        <div id="message" class="error">${errorInfo}</div>
                     </c:if>
                 </s:bind>
             </div>

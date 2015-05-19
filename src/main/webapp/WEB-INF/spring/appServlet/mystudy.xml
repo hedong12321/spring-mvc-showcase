@@ -8,7 +8,8 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
 	<!-- <mvc:view-controller path="/mystudy" view-name="mystudy/login"/> -->
-	<mvc:view-controller path="/mystudy/success" view-name="mystudy/success"/>
+	<!-- controller中无方法中有modelandview对象设置对应页面返回时，需要配置页面路径 -->
+	<!-- <mvc:view-controller path="/mystudy/success" view-name="mystudy/success"/> -->
 	
 	<context:component-scan base-package="org.springframework.mystudy.controller" />
 </beans>
