@@ -34,7 +34,7 @@ public class User implements Serializable{
 	private Date updateTime;
 	
 	// 主键 ：@Id    主键生成方式：strategy = "increment"
-	//映射表中id这个字段，不能为空，并且是唯�?��
+	//映射表中id这个字段，不能为空，并且是唯一的
 	@GenericGenerator(name = "generator", strategy = "increment")
 	@GeneratedValue(generator = "generator")
 	@Column(name = "id", unique = true, nullable = false)
@@ -48,7 +48,7 @@ public class User implements Serializable{
 	}
 	
 	//映射username字段，长度为20
-	@Column(name = "username", length = 20)
+	@Column(name = "username", length = 20, unique = true, nullable = false)
 	public String getUsername() {
 		return username;
 	}
@@ -66,7 +66,7 @@ public class User implements Serializable{
 		this.password = password;
 	}
 	
-	@Column(name = "email", length = 50)
+	@Column(name = "email", length = 50, unique = true, nullable = false)
 	public String getEmail() {
 		return email;
 	}

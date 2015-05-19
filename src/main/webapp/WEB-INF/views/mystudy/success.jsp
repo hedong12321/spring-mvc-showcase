@@ -18,6 +18,6 @@
 </script>
 </head>
 <body>
-     <div id="message" class="success">${username}</div>
+     <div id="message" class="success">${sessionScope.loginUser.username}</div>
 </body>
 </html>
