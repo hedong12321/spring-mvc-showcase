@@ -43,13 +43,23 @@
 		 		</form:label>
 		  		<form:input path="birthDate" />
 		  		 
-		  		<form:label path="phone">
-		  			电话 (in form (###) ###-####) <form:errors path="phone" cssClass="error" />
+		  		<form:label path="formNo">
+		  			表单编号 (in form (###) ###-####) <form:errors path="formNo" cssClass="error" />
 		  		</form:label>
-		  		<form:input path="phone" />
+		  		<form:input path="formNo" />
+		  		
+		  		<form:label path="phone">
+                                       电话 (in form AreaCode-PhoneNumber) <form:errors path="phone" cssClass="error" />
+                </form:label>
+                <form:input path="phone" />
 	
+				<form:label path="email">
+			                邮箱 (in form xx@xx.com) <form:errors path="email" cssClass="error" />
+                </form:label>
+                <form:input path="email" />
+                
 		  		<form:label path="currency">
-		  			薪资 (in form ￥#.##) <form:errors path="currency" cssClass="error" />
+		  			薪资 (in form $#.##) <form:errors path="currency" cssClass="error" />
 		  		</form:label>
 		  		<form:input path="currency" />
 	
@@ -57,8 +67,20 @@
 		  			生活满意度 (in form ##%) <form:errors path="percent" cssClass="error" />
 		  		</form:label>
 		  		<form:input path="percent" />
+		  		
+		  		<form:label path="statisticsDate">
+                                        统计日期 (in form “yyyy-MM-dd”) <form:errors path="statisticsDate" cssClass="error" />
+                </form:label>
+                <form:input path="statisticsDate" />
 	
 		  	</fieldset>
+	
+	        <fieldset class="checkbox">
+                <legend>喜欢的运动</legend>
+                <label><form:checkbox path="sports[0]" value="basketball" />篮球</label>
+                <label><form:checkbox path="sports[1]" value="football" />足球</label>
+                <label><form:checkbox path="sports[2]" value="ping-pong" />乒乓</label>
+            </fieldset>
 	
 			<fieldset>
 				<legend>意见建议</legend>
