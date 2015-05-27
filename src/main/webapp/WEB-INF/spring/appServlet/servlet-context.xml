@@ -36,10 +36,12 @@
 		<beans:property name="formatters">
 		    <beans:list>
 	            <beans:bean class="org.springframework.samples.mvc.convert.MaskFormatAnnotationFormatterFactory" />
+	            <!-- 注册自定义解析/格式化器 -->
+	            <beans:bean class="org.springframework.mystudy.utils.PhoneNumberAnnotationFormatter" />
 		    </beans:list>
 		</beans:property>
 		
-		<!-- 注册ConversionService -->
+		<!-- 注册自定义转换器 -->
 		<beans:property name="converters">
            <beans:list>
                 <beans:bean class="org.springframework.mystudy.utils.StringToPhoneNumberConverter"/>

@@ -55,7 +55,7 @@ public class SignupController {
 		System.out.println("电话号码：" + signupModel.getPhone().getPhoneNumber());
 		System.out.println("***************************");
 		
-		String message = "Form submitted successfully.  Bound " + signupModel;
+		String message = "表单数据提交成功！";
 		model.addAttribute("message", message);
 		return "/mystudy/signup";
 	}

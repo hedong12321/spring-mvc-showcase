@@ -12,4 +12,12 @@
 	<!-- <mvc:view-controller path="/mystudy/success" view-name="mystudy/success"/> -->
 	
 	<context:component-scan base-package="org.springframework.mystudy.controller" />
+	
+	<!-- 配置自定义拦截器 -->
+	<mvc:interceptors>
+	   <mvc:interceptor>
+	       <mvc:mapping path="/mystudy/signup"/>
+	       <bean class="org.springframework.mystudy.utils.LoginInterceptor"></bean>
+	   </mvc:interceptor>
+	</mvc:interceptors>
 </beans>

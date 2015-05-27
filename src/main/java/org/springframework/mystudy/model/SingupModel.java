@@ -16,6 +16,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
+import org.springframework.mystudy.utils.PhoneNumber;
 import org.springframework.samples.mvc.convert.MaskFormat;
 
 public class SingupModel {
@@ -67,7 +68,8 @@ public class SingupModel {
 	/* 类型转换 */
 	private List<String> sports;
 	
-	/* 自定义类型转换 */
+	/* 自定义类型转换 + 解析/格式化 */
+	@PhoneNumber
 	private PhoneNumberModel phone;
 
     public String getName() {
