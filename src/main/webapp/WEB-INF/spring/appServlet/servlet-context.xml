@@ -50,7 +50,11 @@
 	</beans:bean>
 
 	<!-- Only needed because we require fileupload in the org.springframework.samples.mvc.fileupload package -->
-	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >
+	   <!-- 限制大小 -->
+	   <!--1024*2048即2048K-->
+	   <beans:property name="maxUploadSize" value="2097152" />
+	</beans:bean>
 
 	<!-- Imports user-defined @Controller beans that process client requests -->
 	<beans:import resource="controllers.xml" />

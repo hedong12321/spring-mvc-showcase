@@ -9,6 +9,7 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -19,6 +20,7 @@ import org.springframework.format.annotation.NumberFormat.Style;
 import org.springframework.mystudy.utils.PhoneNumber;
 import org.springframework.samples.mvc.convert.MaskFormat;
 
+//@XmlRootElement(name = "singupModel")
 public class SingupModel {
 	
 	/* 验证 */
