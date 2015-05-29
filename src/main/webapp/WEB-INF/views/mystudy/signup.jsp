@@ -29,17 +29,17 @@
 		  	<fieldset>
 		  		<legend>基本信息</legend>
 		  		<form:label path="name">
-		  			昵称 <form:errors path="name" cssClass="error" />
+		  			<s:message code="user.nickname"/> <form:errors path="name" cssClass="error" />
 		 		</form:label>
 		  		<form:input path="name" />
 	
 		  		<form:label path="age">
-		  			年龄 <form:errors path="age" cssClass="error" />
+		  			<s:message code="user.age"/> <form:errors path="age" cssClass="error" />
 		 		</form:label>
 		  		<form:input path="age" />
 		  		
 		  		<form:label path="birthDate">
-		  			生日 (in form yyyy-mm-dd) <form:errors path="birthDate" cssClass="error" />
+		  			<s:message code="user.birthday"/> (in form yyyy-mm-dd) <form:errors path="birthDate" cssClass="error" />
 		 		</form:label>
 		  		<form:input path="birthDate" />
 		  		 

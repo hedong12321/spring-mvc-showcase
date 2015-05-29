@@ -6,6 +6,10 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.web.servlet.support.RequestContext;
+
 /**
  * 通用工具类
  */
@@ -72,6 +76,17 @@ public class Util {
 		t.printStackTrace(writer);
 		StringBuffer buffer = stringWriter.getBuffer();
 		return buffer.toString();
+	}
+	
+	/**
+	 * 获取资源文件数据
+	 * 
+	 * @param t
+	 * @return
+	 */
+	public static String getMessage(HttpServletRequest request, String key) {
+		RequestContext requestContext = new RequestContext(request);
+		return requestContext.getMessage(key);
 	}
 
 	public static void main(String[] args) {

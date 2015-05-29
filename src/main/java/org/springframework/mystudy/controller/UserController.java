@@ -12,7 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -26,7 +25,7 @@ public class UserController {
 	//@RequestMapping("/mystudy/userInfo")
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	@ModelAttribute("userModel")
-	public @ResponseBody ModelAndView simple() {
+	public ModelAndView simple() {
 		UserModel um = new UserModel();
 		//um.setUsername("xiaoming");
 		//um.setPassword("123456");

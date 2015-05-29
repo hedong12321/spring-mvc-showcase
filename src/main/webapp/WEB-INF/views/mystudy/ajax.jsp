@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>spring mvc study-success page</title>
+<title>spring mvc study-ajax page</title>
 <link href="<c:url value="/resources/form.css" />" rel="stylesheet"  type="text/css" />     
 <script type="text/javascript" src="<c:url value="/resources/jquery/1.6/jquery.js" />"></script>
 
