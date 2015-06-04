@@ -8,7 +8,12 @@ import java.security.NoSuchAlgorithmException;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.support.RequestContext;
+import org.springframework.web.servlet.support.RequestContextUtils;
 
 /**
  * 通用工具类
@@ -84,12 +89,27 @@ public class Util {
 	 * @param t
 	 * @return
 	 */
-	public static String getMessage(HttpServletRequest request, String key) {
-		RequestContext requestContext = new RequestContext(request);
-		return requestContext.getMessage(key);
+	public static String getMessage(String key, Object[] args) {
+		RequestContext requestContext = new RequestContext(getRequest());
+		return requestContext.getMessage(key, args);
 	}
+	
+	/**
+	 * 获取资源文件数据
+	 * 
+	 * @param t
+	 * @return
+	 */
+	public static String getText(String key, Object[] args){
+        WebApplicationContext ac = RequestContextUtils.getWebApplicationContext(getRequest());
+        return ac.getMessage(key, args, LocaleContextHolder.getLocale());
+    }
+	
+    /**
+     * @return {@link HttpServletRequest}
+     */
+    private static HttpServletRequest getRequest() {
+        return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+    }
 
-	public static void main(String[] args) {
-		System.out.println(Util.encryptMD5("admin"));
-	}
 }

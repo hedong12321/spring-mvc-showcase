@@ -90,7 +90,8 @@ public class SignupController {
             request.getSession().setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME,LocaleContextHolder.getLocale());
 		
 		SingupModel sm = new SingupModel();
-		sm.setName(Util.getMessage(request, "user.name"));
+		//sm.setName(Util.getMessage("user.name", null));
+		sm.setName(Util.getText("user.name", null));
 		sm.setAge(22);
 		sm.setBirthDate(new Date());
 		sm.setFormNo("1231231234");
